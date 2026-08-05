@@ -1,0 +1,21 @@
+RAG Mimarisinin Bileşenleri
+
+Bu projedeki RAG (Retrieval-Augmented Generation) sistemi dört katmandan
+oluşur: bir kullanıcı arayüzü (CLI), bir sunucu/pipeline katmanı (retrieval
+ve generation'ı yöneten), bir veri katmanı (doküman ve embedding'leri
+saklayan SQLite veritabanı) ve bir AI katmanı (Foundry Local üzerinde
+çalışan on-device LLM).
+
+Retrieval Adımları
+
+Bir soru geldiğinde önce embedding modeliyle vektöre çevrilir. Ardından bu
+vektör, veritabanındaki tüm doküman parçalarının (chunk) vektörleriyle
+cosine similarity kullanılarak karşılaştırılır. En yüksek benzerlik
+skoruna sahip parçalar "context" olarak seçilir.
+
+Generation Adımı
+
+Seçilen context, bir system prompt içine yerleştirilir ve kullanıcının
+sorusuyla birlikte chat modeline gönderilir. Model, sadece verilen
+bağlamı kullanarak cevap üretmeye yönlendirilir; bağlamda yeterli bilgi
+yoksa bunu açıkça belirtmesi istenir.

@@ -1,0 +1,20 @@
+Foundry Local Nedir?
+
+Foundry Local, büyük dil modellerini (LLM) tamamen kullanıcının kendi
+cihazında, internet bağlantısı olmadan çalıştırmayı sağlayan hafif bir
+runtime ve SDK'dır. Bulut hesabı veya GPU gerektirmez; donanıma göre
+(CPU/GPU/NPU) otomatik olarak en uygun model versiyonunu indirir ve
+çalıştırır.
+
+Desteklenen Diller
+
+Foundry Local SDK; Python, C#, JavaScript ve Rust dillerinde kullanılabilir.
+Tüm SDK'lar aynı temel kavramları paylaşır: bir model kataloğu, model
+indirme/yükleme işlemleri ve OpenAI uyumlu bir chat/embedding istemcisi.
+
+Neden Local RAG?
+
+Dokümanlarını bulut servislerine göndermeden, tamamen kendi bilgisayarında
+soru-cevap yapabilmek; veri gizliliği açısından önemlidir. Retrieval-
+Augmented Generation (RAG) deseni, modelin yanıtlarını kendi verinle
+temellendirerek yanlış bilgi üretme (hallucination) riskini azaltır.

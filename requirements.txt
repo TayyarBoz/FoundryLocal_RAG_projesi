@@ -1,0 +1,4 @@
+# Foundry Local SDK — cross-platform package.
+# On Windows, you can instead use "foundry-local-sdk-winml" for extra
+# hardware acceleration (DirectML). Either package exposes the same API.
+foundry-local-sdk
